@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import { KelvinToCelsiusPipe } from './component/pipe/kelvin-to-celsius.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 const materialModules = [
   MatToolbarModule,
   MatButtonModule,
@@ -42,7 +43,8 @@ const materialModules = [
     ...materialModules,
     HttpClientModule,
     ReactiveFormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
