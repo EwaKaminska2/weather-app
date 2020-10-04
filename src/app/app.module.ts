@@ -16,6 +16,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { KelvinToCelsiusPipe } from './component/pipe/kelvin-to-celsius.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 const materialModules = [
   MatToolbarModule,
   MatButtonModule,
@@ -39,7 +41,8 @@ const materialModules = [
     BrowserAnimationsModule,
     ...materialModules,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
